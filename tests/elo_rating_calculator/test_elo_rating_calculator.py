@@ -1,3 +1,8 @@
+"""
+This test module contains tests for elo_rating_calculator.py
+"""
+
+
 import pytest
 
 from src.elo_rating_calculator.elo_rating_calculator import calculate_new_elo_ratings
@@ -8,8 +13,8 @@ test_data = [
 ]
 
 
-@pytest.mark.parametrize("current_rating_a,current_rating_b,actual_outcome,k,c,expected_new_rating_a,"
-                         "expected_new_rating_b", test_data)
+@pytest.mark.parametrize("current_rating_a,current_rating_b,actual_outcome,k,c,"
+                         "expected_new_rating_a,expected_new_rating_b", test_data)
 def test_calculate_new_elo_ratings(
         current_rating_a: int,
         current_rating_b: int,
@@ -19,6 +24,9 @@ def test_calculate_new_elo_ratings(
         expected_new_rating_a: int,
         expected_new_rating_b: int,
 ) -> None:
+    """
+    This method takes the GIVEN of the test and tests if the calculation is correct
+    """
     # When
     new_rating_a, new_rating_b = calculate_new_elo_ratings(
         rating_a=current_rating_a,

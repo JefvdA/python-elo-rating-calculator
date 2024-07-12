@@ -1,3 +1,8 @@
+"""
+This test module contains tests for elo_rating_calculator.py
+"""
+
+
 import pytest
 
 from src.elo_rating_calculator.expected_outcome_calculator import calculate_expected_outcome
@@ -11,7 +16,15 @@ test_data = [
 
 
 @pytest.mark.parametrize("own_rating,other_rating,c,expected_expected_outcome", test_data)
-def test_calculate_expected_outcome(own_rating: int, other_rating: int, c: int, expected_expected_outcome: float) -> None:
+def test_calculate_expected_outcome(
+    own_rating: int,
+    other_rating: int,
+    c: int,
+    expected_expected_outcome: float
+) -> None:
+    """
+    This method takes the GIVEN of the test and tests if the calculation is correct
+    """
     # When
     expected_outcome = calculate_expected_outcome(
         own_rating=own_rating,

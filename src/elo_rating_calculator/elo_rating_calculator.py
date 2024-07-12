@@ -1,4 +1,7 @@
-from math import floor
+"""
+This module provides methods for calculating elo ratings.
+"""
+
 
 from src.elo_rating_calculator.expected_outcome_calculator import calculate_expected_outcome
 
@@ -11,9 +14,8 @@ def calculate_new_elo_ratings(
         c: int,
 ) -> tuple[int, int]:
     """
-    This function calculates the new elo rating from the result of a match where both players are rated using the elo
-    system. See calculation documented below.
-    Rn = Ro + K * (S - E)
+    This function calculates the new elo rating from the result of a match where both players are
+    rated using the elo system. See calculation documented below. Rn = Ro + K * (S - E)
 
     Rn = new elo
     Ro = old elo
